@@ -106,7 +106,7 @@ class LanguageBindImageTower(nn.Module):
         if not delay_load:
             self.load_model()
         else:
-            self.cfg_only = LanguageBindImageConfig.from_pretrained(self.image_tower_name, cache_dir=self.cache_dir)
+            self.cfg_only = LanguageBindImageConfig.from_pretrained(self.image_tower_name)
 
     ############################################################
     def load_model(self):
@@ -202,7 +202,7 @@ class LanguageBindVideoTower(nn.Module):
         self.video_processor = LanguageBindVideoProcessor(model.config)
 
 
-        # model = LanguageBindImage.from_pretrained('LanguageBind/LanguageBind_Image', cache_dir=self.cache_dir)
+        # model = LanguageBindImage.from_pretrained('LanguageBind/LanguageBind_Image')
         self.video_tower = model.vision_model
         self.video_tower.requires_grad_(False)
 
