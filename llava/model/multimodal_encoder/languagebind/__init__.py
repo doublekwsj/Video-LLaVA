@@ -110,7 +110,7 @@ class LanguageBindImageTower(nn.Module):
 
     ############################################################
     def load_model(self):
-        model = LanguageBindImage.from_pretrained(self.image_tower_name, cache_dir=self.cache_dir)
+        model = LanguageBindImage.from_pretrained(self.image_tower_name)
         self.image_tower = model.vision_model
         self.image_tower.requires_grad_(False)
 
