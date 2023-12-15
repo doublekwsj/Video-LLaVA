@@ -198,7 +198,7 @@ class LanguageBindVideoTower(nn.Module):
 
     ############################################################
     def load_model(self):
-        model = LanguageBindVideo.from_pretrained(self.video_tower_name, cache_dir=self.cache_dir)
+        model = LanguageBindVideo.from_pretrained(self.video_tower_name)
         self.video_processor = LanguageBindVideoProcessor(model.config)
 
 
